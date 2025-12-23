@@ -1,0 +1,24 @@
+# Core Libraries
+streamlit
+pandas
+pydantic
+python-dotenv
+
+# Flask for API
+flask
+flask-cors
+
+# OpenAI Integration
+langchain
+langchain-core
+langchain-openai
+anthropic
+
+# Image Processing
+Pillow
+
+# HTTP requests
+requests
+
+# Database
+supabase
