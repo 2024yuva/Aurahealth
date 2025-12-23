@@ -1,0 +1,427 @@
+.app {
+  min-height: 100vh;
+  padding: var(--spacing-lg);
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background: linear-gradient(180deg,
+      #e0f7fa 0%,
+      #e3f2fd 25%,
+      #ffffff 50%,
+      #e3f2fd 75%,
+      #e0f7fa 100%);
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
+  animation: fadeIn 0.8s ease;
+  position: relative;
+}
+
+.app-header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: var(--spacing-sm) auto 0;
+  border-radius: 2px;
+}
+
+.app-header h1,
+.logo-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.01em;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 3.5rem;
+  background: var(--bg-secondary);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Section Styling */
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  color: var(--accent-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: var(--spacing-sm);
+}
+
+/* Upload Container */
+.upload-container {
+  background: var(--bg-card);
+  border: 2px dashed #cbd5e0;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.upload-container:hover,
+.upload-container.drag-over {
+  border-color: var(--primary-color);
+  background: #fff5f2;
+  /* Very light orange tint */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-color);
+}
+
+.upload-container h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.upload-container p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Buttons */
+.upload-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.upload-button:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Prescription Preview */
+.prescription-preview {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.preview-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.preview-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e0;
+}
+
+.preview-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.preview-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+/* Analysis Results Card */
+.analysis-results {
+  background: #fdfdfd;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  margin-top: var(--spacing-sm);
+}
+
+.info-field {
+  background: var(--bg-primary);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.info-field strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+  text-align: left;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: var(--bg-primary);
+}
+
+table td {
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+/* Doctors Section */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.doctor-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.department-image-container img {
+  border-radius: var(--radius-md);
+}
+
+.doctor-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-top: 1rem;
+}
+
+.doctor-specialty {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.facility-tag {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  /* Pill shape */
+  font-size: 0.75rem;
+  border: 1px solid var(--border-color);
+  display: inline-block;
+  margin: 2px;
+}
+
+.book-button {
+  margin-top: auto;
+  /* Push to bottom */
+  background: #fff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.remove-button {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.remove-button:hover {
+  background: #fff5f5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* GPT */
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   ROOT VARIABLES
+================================ */
+:root {
+  --cyan-light: #e6f7ff;
+  --blue-soft: #eaf2ff;
+  --blue-glow: #d6efff;
+  --white-soft: #f9fcff;
+  --text-dark: #1f2937;
+}
+
+/* ===============================
+   BODY BACKGROUND (AMBIENT GRADIENT)
+================================ */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+
+  /* Soft top & bottom tint */
+  background:
+    radial-gradient(1200px 400px at top center,
+      var(--blue-glow),
+      transparent 70%),
+    radial-gradient(1200px 400px at bottom center,
+      var(--cyan-light),
+      transparent 70%),
+    linear-gradient(to bottom,
+      var(--blue-soft) 0%,
+      var(--white-soft) 45%,
+      var(--white-soft) 55%,
+      var(--cyan-light) 100%);
+
+  background-attachment: fixed;
+}
+
+/* ===============================
+   SMOOTH SCROLL & TEXT
+================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===============================
+   OPTIONAL: GLASSY CARD EFFECT
+================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* ===============================
+   BUTTON STYLE (OPTIONAL)
+================================ */
+.btn-primary {
+  background: linear-gradient(135deg,
+      #60a5fa,
+      #22d3ee);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(34, 211, 238, 0.35);
+}
